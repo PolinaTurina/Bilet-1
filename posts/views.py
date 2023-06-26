@@ -12,7 +12,7 @@ def post_list_view(request):
         form = PostForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('post_list')
+            return redirect('posts')
     else:
         form = PostForm()
     context = {'post_list' : posts, 'post_form': form}
