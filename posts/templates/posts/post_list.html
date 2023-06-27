@@ -2,6 +2,13 @@
 
 {%block content%}
 <div class="layout">
+
+    <form action="{%url 'posts'%}" method="get">
+        <input type="search" type="text" name="q" placeholder="Найти...">
+        <button style="width: 50px;" class="search_button" type="submit">Искать</button>
+    </form>
+
+
     <div style="background: #ffffffad; padding: 50px; border-radius: 10px;">
 <p>Посты</p>
 
