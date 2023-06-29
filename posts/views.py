@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from .models import *
 from .forms import *
@@ -7,7 +7,20 @@ from django.db.models import Q
 
 def post_detail_view(request, post_pk):
     post = Post.objects.get(pk=post_pk)
-    context = {'post_detail': post}
+    
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit = False)
+            comment.post = post
+            comment.save()
+            form = CommentForm()
+    else:
+        form = CommentForm()
+
+    comments = Comment.objects.filter(post=post) 
+
+    context = {'post_detail': post, 'comments': comments, 'comment_form': form, 'detail': post}
     return render(request, 'posts/post_detail.html', context)
 
 

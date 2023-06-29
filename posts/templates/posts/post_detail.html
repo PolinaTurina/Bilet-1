@@ -9,6 +9,23 @@
     {%if post_detail.image%}
     <img style="width: 450px;" src = "{{ post_detail.image.url }}">
     {%endif%}
+
+
+
+    {%for com in comments%}
+    <div>
+        <p>{{com.name}}</p>
+        <p>{{com.text}}</p>
+    </div>
+    {%endfor%}
+
+
+    <form action="" method="post"  style="display: flex; flex-direction: column;">
+        {% csrf_token %}
+        {{ comment_form }}
+        <input type="submit" value="Добавить комментарий">
+    </form>
+
     </div>
 </div>
 

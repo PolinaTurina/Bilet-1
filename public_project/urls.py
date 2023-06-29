@@ -23,7 +23,7 @@ from posts.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', post_list_view, name='posts'),
-    path('post/<int:post_pk>', post_detail_view),
+    path('post/<int:post_pk>', post_detail_view, name='post'),
 ]
 
 if settings.DEBUG:
