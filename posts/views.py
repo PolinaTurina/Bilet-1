@@ -5,6 +5,12 @@ from .forms import *
 from django.db.models import Q
 
 
+def post_detail_view(request, post_pk):
+    post = Post.objects.get(pk=post_pk)
+    context = {'post_detail': post}
+    return render(request, 'posts/post_detail.html', context)
+
+
 
 def post_list_view(request):
 

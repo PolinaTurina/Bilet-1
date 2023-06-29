@@ -1,0 +1,15 @@
+{%extends 'root.html'%}
+
+{%block content%}
+
+<div class="layout">
+<div class="content">
+    <div class="h_content"><h2>{{post_detail.title}}</h2>{{post_detail.create_date}}</div>
+    <p>{{post_detail.text}}</p>
+    {%if post_detail.image%}
+    <img style="width: 450px;" src = "{{ post_detail.image.url }}">
+    {%endif%}
+    </div>
+</div>
+
+{%endblock%}

@@ -23,7 +23,9 @@
 
     {%for post in post_list%}
         <div class="content">
-        <div class="h_content"><h2>{{post.title}}</h2>{{post.create_date}}</div>
+        <a href="/post/{{post.pk}}">
+            <div class="h_content"><h2>{{post.title}}</h2>{{post.create_date}}</div>
+        </a>
         <p>{{post.text}}</p>
         {%if post.image%}
         <img style="width: 200px;" src = "{{ post.image.url }}">

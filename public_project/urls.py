@@ -22,7 +22,8 @@ from posts.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/', post_list_view, name='posts')
+    path('posts/', post_list_view, name='posts'),
+    path('post/<int:post_pk>', post_detail_view),
 ]
 
 if settings.DEBUG:
