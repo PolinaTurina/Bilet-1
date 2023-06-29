@@ -20,7 +20,7 @@ def post_detail_view(request, post_pk):
 
     comments = Comment.objects.filter(post=post) 
 
-    context = {'post_detail': post, 'comments': comments, 'comment_form': form, 'detail': post}
+    context = {'post_detail': post, 'comments': comments, 'comment_form': form}
     return render(request, 'posts/post_detail.html', context)
 
 

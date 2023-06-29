@@ -12,12 +12,14 @@
 
 
 
+    <div style="background-color: #ffffff6b; width: 100%; margin-top: 20px;">
     {%for com in comments%}
-    <div>
-        <p>{{com.name}}</p>
+    <div style="padding: 20px; border-bottom: 1px solid #91647b54;;">
+        <p style="font-size: 20px; color: rgb(138, 6, 6);">{{com.name}}</p>
         <p>{{com.text}}</p>
     </div>
     {%endfor%}
+    </div>
 
 
     <form action="" method="post"  style="display: flex; flex-direction: column;">
